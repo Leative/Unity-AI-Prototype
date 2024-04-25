@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 26050679}
+  opponent: {fileID: 1221684865}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +760,12 @@ Transform:
   - {fileID: 1805393841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1221684865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa7febd65e48c664f8ac5da5b86928e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 767186404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1405184384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,7 +859,7 @@ GameObject:
   - component: {fileID: 1523742621}
   - component: {fileID: 1523742620}
   - component: {fileID: 1523742619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

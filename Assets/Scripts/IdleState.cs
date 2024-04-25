@@ -16,9 +16,9 @@ public class IdleState : AbstractCharacterState
 
     public override void UpdateState()
     {
-        if (Controller.IsCoverPressed)
+        if (Controller.IsCoverTriggered)
         {
-            Controller.SwitchState(StateProvider.Idle);
+            Controller.SwitchState(StateProvider.Cover);            
         }
     }
 }

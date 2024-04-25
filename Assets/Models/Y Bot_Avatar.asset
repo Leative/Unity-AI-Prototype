@@ -6,7 +6,7 @@ Avatar:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Y Bot@IdleAvatar
+  m_Name: Y Bot_Avatar
   m_AvatarSize: 17228
   m_Avatar:
     serializedVersion: 3
