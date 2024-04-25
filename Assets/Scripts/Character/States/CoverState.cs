@@ -14,8 +14,9 @@ public class CoverState : AbstractCharacterState
 
     public override void EnterState()
     {
-        if (!HasNextCover(out Collider cover)) {
-            //agent.SetDestination();
+        if (HasNextCover(out Collider cover)) {  
+            Vector3 destination = FindBestCoverPosition(cover);          
+            Controller.Agent.SetDestination(destination);
             AnimationProvider.SetRunAnimation();
         } else {
             //Controller.SwitchState(StateProvider.Shoot);
@@ -59,4 +60,27 @@ public class CoverState : AbstractCharacterState
         GizmoUtilities.Instance.PlaceVisualizer(cover, "Cover");
         return true;
     }
+
+    private Vector3 FindBestCoverPosition(Collider cover)
+        {
+            Vector3 threatDirection = cover.transform.position - Controller.Opponent.transform.position;
+            Vector3 raycastEnd = Controller.Opponent.transform.position + threatDirection + (threatDirection.normalized * GetApproxMaxCoverDiameter(cover));
+            GizmoUtilities.Instance.PlaceVisualizer(raycastEnd, "Raycast length");
+            Ray ray = new Ray(Controller.Opponent.transform.position, threatDirection);
+            GizmoUtilities.Instance.DrawLine(Controller.Opponent.transform.position, raycastEnd, Color.red);
+            Physics.Raycast(ray, out RaycastHit hit);
+            GizmoUtilities.Instance.PlaceVisualizer(hit.point, "Raycast hit");
+
+            Vector3 farSideOfCover = hit.point + threatDirection.normalized * GetApproxMaxCoverDiameter(cover);
+            GizmoUtilities.Instance.PlaceVisualizer(farSideOfCover, " farside");
+            Vector3 coverPosition = cover.ClosestPoint(farSideOfCover);
+
+            GizmoUtilities.Instance.PlaceVisualizer(coverPosition, "Cover position");
+            return coverPosition;
+        }
+
+        private float GetApproxMaxCoverDiameter(Collider cover)
+        {
+            return Vector3.Distance(cover.bounds.min, cover.bounds.max);
+        }
 }
