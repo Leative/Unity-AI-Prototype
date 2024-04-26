@@ -6,4 +6,6 @@ This is a simple prototype to exercise working with various aspects of creating 
 - Animation, Rigging
 - Statemachine as character controller
 - NavMesh
+- Raycasting
+- Calculating viable cover instead of using pre-defined positions
 - Self-loading singleton to add debugging gizmos

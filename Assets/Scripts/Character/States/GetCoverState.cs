@@ -37,6 +37,7 @@ public class GetCoverState : AbstractCharacterState
 
         if (ReachedDestination())
         {
+            TurnToThreat();
             Controller.SwitchState(StateProvider.Cover);
         }
     }
@@ -98,4 +99,10 @@ public class GetCoverState : AbstractCharacterState
         }
         return finishedPath;
     }
+
+private void TurnToThreat()
+        {
+            Vector3 threatDirection = Controller.Opponent.transform.position - Controller.Agent.transform.position;
+            Controller.Agent.transform.rotation = Quaternion.LookRotation(threatDirection);
+        }
 }
