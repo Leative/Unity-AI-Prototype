@@ -4,6 +4,7 @@ Idea: a humanoid character can identify obstacles near its location and cover be
 This is a simple prototype to exercise working with various aspects of creating an AI:
 - Humanoid models
 - Animation, Rigging
+- Animation events, triggered sounds
 - Statemachine as character controller
 - NavMesh
 - Raycasting
