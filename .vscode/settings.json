@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "AI-Cover-Prototype.sln"
+    "dotnet.defaultSolution": "AI-Prototype.sln"
 }

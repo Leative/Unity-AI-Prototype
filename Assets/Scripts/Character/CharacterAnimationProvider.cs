@@ -18,18 +18,20 @@ public class CharacterAnimationProvider {
     public void SetIdleAnimation() {
         _animator.SetBool(isMovingHash, false);
         _animator.SetBool(isRunningHash, false);
+        _animator.SetBool(isKneelingHash, false);
+        
         //_animator.SetLayerWeight(1, 0f);
     }
 
     public void SetRunAnimation() {
         _animator.SetBool(isMovingHash, true);
         _animator.SetBool(isRunningHash, true);
+        _animator.SetBool(isKneelingHash, false);
         //_animator.SetLayerWeight(1, 0f);
     }
 
     public void SetCoverAnimation() {
-        _animator.SetBool(isMovingHash, false);
-        _animator.SetBool(isRunningHash, false);
+        _animator.SetBool(isKneelingHash, true);
         //_animator.SetLayerWeight(1, 0f);
     }
 }

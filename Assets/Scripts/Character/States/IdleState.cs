@@ -18,7 +18,7 @@ public class IdleState : AbstractCharacterState
     {
         if (Controller.IsCoverTriggered)
         {
-            Controller.SwitchState(StateProvider.Cover);            
+            Controller.SwitchState(StateProvider.GetCover);            
         }
     }
 }
